@@ -11,7 +11,9 @@ CUR_GIT_ROOT=$(git rev-parse --show-toplevel)
 DL_FOLDER=$CUR_GIT_ROOT/dl_third_party
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  export PATH="$DL_FOLDER/Qt_desktop/5.15.0/clang_64/bin/:$PATH"
+  true
+  #export PATH="$DL_FOLDER/Qt_desktop/5.15.0/clang_64/bin/:$PATH"
 else
-  export PATH="$DL_FOLDER/Qt_desktop/5.15.0/gcc_64/bin/:$PATH"
+  #export PATH="$DL_FOLDER/Qt_desktop/5.15.0/gcc_64/bin/:$PATH"
+  export PATH="/opt/repositories/KEEP_qt5_dbg_install/bin:$PATH"
 fi
