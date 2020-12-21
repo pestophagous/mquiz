@@ -1,0 +1,14 @@
+<RCC>
+  <qresource prefix="libstyles">
+    <!-- PLEASE OBEY ALPHABETICAL ORDER -->
+    <file>Fonts.qml</file>
+    <file>Theme.qml</file>
+    <file>fonts/fa-regular-400.ttf</file>
+    <file>fonts/fa-solid-900.ttf</file>
+    <file>images/219Design.png</file>
+    <file>images/blacknwhite.png</file>
+    <file>images/home.png</file>
+    <file>images/smile.svg</file>
+    <file>qmldir</file>
+  </qresource>
+</RCC>

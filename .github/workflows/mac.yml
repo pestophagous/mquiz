@@ -1,0 +1,14 @@
+name: Mac_CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: macos-10.15
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: run_all_tests
+      run: ./run_all_tests.sh
