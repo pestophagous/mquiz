@@ -31,6 +31,8 @@ then
   ./tools/ci/provision.sh
   git submodule update --init # avoid '--recursive' (as long as we can) due to inner qmlfmt deps
 
+  source tools/ci/ci_path_to_qmake.bash
+
   XDISPLAY=":1"
 else
   echo "Assuming we are NOT on bitbucket. Did not find BITBUCKET_REPO_OWNER nor BITBUCKET_REPO_FULL_NAME in env."
