@@ -24,7 +24,7 @@ int main( int argc, char* argv[] )
     project::log( "main.cc starting now %d", static_cast<int>( __LINE__ ) );
 
     QGuiApplication app( argc, argv ); // ... note next line...
-    // QQuickStyle::setStyle( "Fusion" ); // <-- call setStyle after creating app (if style is needed)
+    QQuickStyle::setStyle( "Material" ); // <-- call setStyle after creating app (if style is needed)
 
     // ViewModels must OUTLIVE the qml engine, so create them first:
     project::ViewModelCollection vms( app );
