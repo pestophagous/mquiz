@@ -13,6 +13,7 @@
 #include "gui_tests.h"
 #include "src/app/event_filter.h"
 #include "src/lib_app/cli_options.h"
+#include "src/lib_app/game.h"
 #include "src/lib_app/logging_tags.h"
 #include "src/lib_app/resources.h"
 #include "src/libstyles/resource_helper.h"
@@ -34,7 +35,7 @@ ViewModelCollection::ViewModelCollection( const QGuiApplication& app )
     project::initLibResources();
 
     // Do after the 'init..resource' calls, in case any ctor wants rsrcs:
-    // m_navigation = std::make_unique<Navigation>();
+    m_game = std::make_unique<Game>( *m_opts );
 }
 
 ViewModelCollection::~ViewModelCollection() = default;
@@ -47,9 +48,10 @@ void ViewModelCollection::ExportContextPropertiesToQml( QQmlApplicationEngine* e
     Log( str( "setContextProperty" ), engine->rootContext() )->setContextProperty( "versionInfoGitHash", GIT_HASH_WHEN_BUILT );
     fprintf( stderr, "GUI Build Info: %s %s\n", BUILD_ON_DATE, GIT_HASH_WHEN_BUILT );
 
-    // m_navigation->ExportContextPropertiesToQml( engine );
     Log( str( "ExportContextPropertiesToQml" ), m_logging )->ExportContextPropertiesToQml( engine );
     ResourceHelper::ExportContextPropertiesToQml( engine );
+
+    m_game->ExportContextPropertiesToQml( engine );
 
     // Keep this at the END of the 'ExportContext...' method, so all view models are exported before any tests run
     if( Log( str( "RunningGuiTests" ), m_opts )->RunningGuiTests() )
