@@ -1,0 +1,56 @@
+anas platyrhynchos|duck|mallard
+felis catus|cat
+pan troglodytes|chimpanzee
+capra hircus|goat
+loxodonta|elephant|african elephant
+formicidae|ant
+elephas maximus|elephant|asian elephant
+chiroptera|bat
+ursidae|bear
+ursus maritimus|bear|polar bear
+bubalus bubalis|buffalo
+acinonyx jubatus|cheetah
+bos taurus|cow
+cervidae|deer
+canis lupus|wolf
+canis lupus familiaris|dog
+bubo scandiacus|owl|snowy owl
+equus caballus|horse
+gallus gallus domesticus|chicken
+corvus|crow
+panthera leo|lion
+rhinoceros unicornis|rhino|rhinoceros
+ovis aries|sheep
+panthera tigris|tiger
+equus quagga|zebra
+sus scrofa|boar|wild boar
+alces alces|moose
+mephitis mephitis|skunk
+mola mola|sunfish
+sus scrofa domesticus|pig
+reparo|~trap~|Harry Potter magic spell
+riddikulus|~trap~|Harry Potter magic spell
+accio|~trap~|Harry Potter magic spell
+alohomora|~trap~|Harry Potter magic spell
+crucio|~trap~|Harry Potter magic spell
+petrificus totalus|~trap~|Harry Potter magic spell
+wingardium leviosa|~trap~|Harry Potter magic spell
+sectum sempra|~trap~|Harry Potter magic spell
+lumos|~trap~|Harry Potter magic spell
+expelliarmus|~trap~|Harry Potter magic spell
+obliviate|~trap~|Harry Potter magic spell
+confundo|~trap~|Harry Potter magic spell
+expecto patronum|~trap~|Harry Potter magic spell
+geminio|~trap~|Harry Potter magic spell
+langlock|~trap~|Harry Potter magic spell
+orchideous|~trap~|Harry Potter magic spell
+glisseo|~trap~|Harry Potter magic spell
+tarantallegra|~trap~|Harry Potter magic spell
+rennervate|~trap~|Harry Potter magic spell
+anapneo|~trap~|Harry Potter magic spell
+defodio|~trap~|Harry Potter magic spell
+waddiwasi|~trap~|Harry Potter magic spell
+homorphus|~trap~|Harry Potter magic spell
+partis temporus|~trap~|Harry Potter magic spell
+ferula|~trap~|Harry Potter magic spell
+densaugeo|~trap~|Harry Potter magic spell
