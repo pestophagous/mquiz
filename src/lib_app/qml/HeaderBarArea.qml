@@ -13,7 +13,7 @@ Item {
     visible: !navigation.gameIsActive
     horizontalAlignment: Text.AlignHCenter
     verticalAlignment: Text.AlignVCenter
-    text: "Title Heading"
+    text: "Jones Animal Quiz"
     DebugRectangle {
     }
   }
