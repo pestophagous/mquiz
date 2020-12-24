@@ -81,6 +81,8 @@ void Game::startOneGame()
 {
     advance();
     m_gameIsActive = true;
+    m_countCorrect = 0;
+    m_totalQuestionsScored = 0;
     emit eventEdgeOfGame();
 }
 
