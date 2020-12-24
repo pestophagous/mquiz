@@ -9,6 +9,9 @@
     <file>qml/ImageSvgHelper.qml</file>
     <file>qml/LogTags.qml</file>
     <file>qml/Quiz.qml</file>
+    <file>qml/Verdict.qml</file>
+    <file>qml/VerdictGood.qml</file>
+    <file>qml/VerdictOops.qml</file>
     <file>qml/VersionLabel.qml</file>
     <file>qml/Waiting.qml</file>
     <file>qml/main.qml</file>

@@ -12,16 +12,21 @@ Item {
     anchors.fill: parent
 
     TextField {
+      id: yourAnswer
       Layout.fillWidth: true
       Layout.minimumHeight: 100
       Layout.maximumHeight: Layout.minimumHeight
       horizontalAlignment: Text.AlignHCenter
       verticalAlignment: Text.AlignVCenter
 
+      enabled: !verdictPanel.visible
+
       text: ""
 
       onTextChanged: {
-        game.typingTheAnswer(text)
+        if (text.length > 0) {
+          game.typingTheAnswer(text)
+        }
       }
 
       /*
@@ -32,6 +37,13 @@ Item {
         }
       }
       */
+      Connections {
+        target: game
+
+        function onEventNewQuestion() {
+          yourAnswer.text = ""
+        }
+      }
     }
 
     RowLayout {
@@ -65,7 +77,7 @@ Item {
 
     Label {
       Layout.fillWidth: true
-      Layout.minimumHeight: 300
+      Layout.minimumHeight: 50
       Layout.maximumHeight: Layout.minimumHeight
 
       verticalAlignment: Text.AlignTop
@@ -75,14 +87,34 @@ Item {
       }
     }
 
-    Label {
+    Verdict {
+      id: verdictPanel
       Layout.fillWidth: true
       Layout.fillHeight: true
-      verticalAlignment: Text.AlignTop
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas augue diam, sit amet gravida leo ultrices non. Curabitur eleifend nisl a nibh condimentum, id vehicula ipsum tempor. Etiam dictum pulvinar lobortis. Quisque eu nisl vel tortor imperdiet semper sit amet sit amet nibh. Nunc neque mauris, blandit eu semper vitae, molestie sit amet nisl. Nunc dignissim odio non libero posuere venenatis. Maecenas accumsan, nunc vel convallis finibus, lorem ex luctus odio, lacinia varius purus nibh hendrerit ante. Nullam pharetra lorem id diam sagittis vulputate ornare sit amet tellus. Vivamus in velit orci."
-      wrapMode: Text.Wrap
+      visible: false
+
+      Connections {
+        target: game
+
+        function onEventVerdictRendered(correct) {
+          verdictPanel.visible = true
+          verdictPanel.userGaveCorrectAnswer = correct
+        }
+
+        function onEventNewQuestion() {
+          verdictPanel.visible = false
+        }
+      }
+
       DebugRectangle {
       }
+    }
+
+    Item {
+      id: verdictPanelPlaceholder
+      Layout.fillWidth: true
+      Layout.fillHeight: true
+      visible: !verdictPanel.visible
     }
   }
 }
