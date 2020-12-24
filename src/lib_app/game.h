@@ -8,12 +8,17 @@
 #ifndef PROJECT_LIB_GAME_H
 #define PROJECT_LIB_GAME_H
 
+#include <QTimer>
 #include <QtCore/QObject>
 #include <QtQml/QQmlEngine>
+
+#include <memory>
 
 namespace project
 {
 class CliOptions;
+class QuestionSet;
+class RandomConcrete;
 
 class Game : public QObject
 {
@@ -52,7 +57,7 @@ class Game : public QObject
     // clang-format on
 
 public:
-    explicit Game( const CliOptions& options );
+    explicit Game( const CliOptions& options, QuestionSet* qs );
     ~Game() override;
 
     Game( const Game& ) = delete;
@@ -66,7 +71,7 @@ public:
     int GetCountdown() const;
     int GetCountCorrect() const;
     int GetTotalQuestionsScored() const;
-    QString GetPartialPathToOopsImage() const;
+    QString GetPartialPathToOopsImage();
 
     Q_INVOKABLE void endTheGame();
     Q_INVOKABLE void startOneGame();
@@ -82,7 +87,17 @@ signals:
     void eventNewQuestion();
     void eventEdgeOfGame();
 
+private slots:
+    void OnTimerTick();
+
 private:
+    void IncrementAndEmitScore( bool correct );
+
+    const std::unique_ptr<RandomConcrete> m_random;
+
+    QuestionSet* m_questions = nullptr;
+    QTimer m_countdownTimer;
+
     bool m_gameIsActive = false;
     QString m_prompt;
     QString m_correctAnswer;

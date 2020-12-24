@@ -15,6 +15,7 @@
 #include "src/lib_app/cli_options.h"
 #include "src/lib_app/game.h"
 #include "src/lib_app/logging_tags.h"
+#include "src/lib_app/question_set.h"
 #include "src/lib_app/resources.h"
 #include "src/libstyles/resource_helper.h"
 #include "src/util/qml_message_interceptor.h"
@@ -35,7 +36,8 @@ ViewModelCollection::ViewModelCollection( const QGuiApplication& app )
     project::initLibResources();
 
     // Do after the 'init..resource' calls, in case any ctor wants rsrcs:
-    m_game = std::make_unique<Game>( *m_opts );
+    m_questions = std::make_unique<QuestionSet>( *m_opts );
+    m_game = std::make_unique<Game>( *m_opts, m_questions.get() );
 }
 
 ViewModelCollection::~ViewModelCollection() = default;

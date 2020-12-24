@@ -19,7 +19,7 @@ Item {
 
       horizontalAlignment: Text.AlignHCenter
       verticalAlignment: Text.AlignVCenter
-      text: "XX"
+      text: "End"
       DebugRectangle {
       }
 
@@ -37,7 +37,7 @@ Item {
 
       horizontalAlignment: Text.AlignHCenter
       verticalAlignment: Text.AlignVCenter
-      text: "Score"
+      text: "Score: " + game.countCorrect + "/" + game.totalQuestionsScored
       DebugRectangle {
       }
     }

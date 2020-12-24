@@ -14,6 +14,8 @@ SOURCES += \
     game.cc \
     lib.cc \
     logging_tags.cc \
+    question_set.cc \
+    random_concrete.cc \
     resources.cc
 
 HEADERS += \
@@ -21,6 +23,8 @@ HEADERS += \
     game.h \
     lib.h \
     logging_tags.h \
+    question_set.h \
+    random_concrete.h \
     resources.h
 
 # 'pri' usage based on http://archive.is/https://www.toptal.com/qt/vital-guide-qmake
