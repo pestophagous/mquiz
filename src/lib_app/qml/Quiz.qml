@@ -18,10 +18,10 @@ Item {
       horizontalAlignment: Text.AlignHCenter
       verticalAlignment: Text.AlignVCenter
 
-      text: "the name"
+      text: ""
 
       onTextChanged: {
-        root.nameChanged(text)
+        game.typingTheAnswer(text)
       }
 
       /*
@@ -47,7 +47,7 @@ Item {
 
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
-        text: "10-9"
+        text: game.countdown
         DebugRectangle {
         }
       }
@@ -57,6 +57,9 @@ Item {
         Layout.fillWidth: true
 
         text: "Trick!"
+        onClicked: {
+          game.submitItWasTrickQuestion()
+        }
       }
     }
 
@@ -66,7 +69,7 @@ Item {
       Layout.maximumHeight: Layout.minimumHeight
 
       verticalAlignment: Text.AlignTop
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas augue diam, sit amet gravida leo ultrices non. Curabitur eleifend nisl a nibh condimentum, id vehicula ipsum tempor. Etiam dictum pulvinar lobortis. Quisque eu nisl vel tortor imperdiet semper sit amet sit amet nibh. Nunc neque mauris, blandit eu semper vitae, molestie sit amet nisl. Nunc dignissim odio non libero posuere venenatis. Maecenas accumsan, nunc vel convallis finibus, lorem ex luctus odio, lacinia varius purus nibh hendrerit ante. Nullam pharetra lorem id diam sagittis vulputate ornare sit amet tellus. Vivamus in velit orci."
+      text: game.prompt
       wrapMode: Text.Wrap
       DebugRectangle {
       }

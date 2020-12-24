@@ -22,6 +22,7 @@ class Game;
 class GuiTests;
 class LoggingTags;
 class QmlMessageInterceptor;
+class QuestionSet;
 
 class ViewModelCollection
 {
@@ -42,6 +43,7 @@ private:
     std::unique_ptr<QmlMessageInterceptor> m_qmlLogger;
     std::unique_ptr<LoggingTags> m_logging;
 
+    std::unique_ptr<QuestionSet> m_questions;
     std::unique_ptr<Game> m_game;
 
     std::unique_ptr<GuiTests> m_guiTests;
