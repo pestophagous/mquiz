@@ -11,12 +11,14 @@ RESOURCES = libresources.qrc
 
 SOURCES += \
     cli_options.cc \
+    game.cc \
     lib.cc \
     logging_tags.cc \
     resources.cc
 
 HEADERS += \
     cli_options.h \
+    game.h \
     lib.h \
     logging_tags.h \
     resources.h
