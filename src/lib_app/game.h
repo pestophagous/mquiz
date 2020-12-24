@@ -83,7 +83,7 @@ public:
 
 signals:
     void eventCountdownChanged();
-    void eventVerdictRendered( bool ); // true if answer is correct. false otherwise.
+    void eventVerdictRendered( bool correct ); // true if answer is correct. false otherwise.
     void eventNewQuestion();
     void eventEdgeOfGame();
 
