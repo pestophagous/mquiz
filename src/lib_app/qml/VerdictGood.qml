@@ -15,23 +15,15 @@ Item {
       Layout.fillWidth: true
       Layout.minimumHeight: 60
       Layout.maximumHeight: Layout.minimumHeight
+      Layout.alignment: Qt.AlignTop
 
       horizontalAlignment: Text.AlignHCenter
-      verticalAlignment: Text.AlignVCenter
+      verticalAlignment: Text.AlignTop
+      padding: 15
 
       text: "Correct! " + game.correctAnswer
 
       DebugRectangle {
-      }
-    }
-
-    Button {
-      Layout.fillHeight: true
-      Layout.fillWidth: true
-
-      text: "Next"
-      onClicked: {
-        game.advance()
       }
     }
   }
