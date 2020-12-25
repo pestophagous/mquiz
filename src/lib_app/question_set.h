@@ -10,9 +10,13 @@
 
 #include <QString>
 
+#include <memory>
+#include <vector>
+
 namespace project
 {
 class CliOptions;
+class RandomConcrete;
 
 struct QAndA
 {
@@ -35,6 +39,19 @@ public:
     bool IsCorrectAnswer( const QString& answer );
 
 private:
+    struct QAndA1AndA2
+    {
+        QString q;
+        QString a1;
+        QString a2;
+    };
+
+    const std::unique_ptr<RandomConcrete> m_random;
+
+    std::vector<QAndA1AndA2> m_all;
+    std::vector<QAndA1AndA2> m_unused;
+
+    QAndA1AndA2 m_currentItem;
 };
 
 } // namespace project
