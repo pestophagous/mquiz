@@ -2,6 +2,7 @@
   <qresource prefix="">
     <!-- PLEASE OBEY ALPHABETICAL ORDER -->
     <file>data/quiz.txt</file>
+    <file>qml/CountdownLabel.qml</file>
     <file>qml/DebugRectangle.qml</file>
     <file>qml/GamePanel.qml</file>
     <file>qml/HeaderBarArea.qml</file>

@@ -51,14 +51,11 @@ Item {
       Layout.minimumHeight: 100
       Layout.maximumHeight: Layout.minimumHeight
 
-      Label {
+      CountdownLabel {
         Layout.fillHeight: true
-
         Layout.minimumWidth: 110
         Layout.maximumWidth: Layout.minimumWidth
 
-        horizontalAlignment: Text.AlignHCenter
-        verticalAlignment: Text.AlignVCenter
         text: game.countdown
         DebugRectangle {
         }
