@@ -14,17 +14,4 @@ Item {
     source: resourceHelper.imageSourcePrefix + game.partialPathToOopsImage
     fillMode: Image.PreserveAspectFit
   }
-  Button {
-    anchors.top: parent.top
-    anchors.horizontalCenter: parent.horizontalCenter
-
-    height: 50
-    width: 125
-
-    text: "Next"
-
-    onClicked: {
-      game.advance()
-    }
-  }
 }

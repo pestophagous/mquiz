@@ -68,19 +68,33 @@ Item {
         Layout.fillHeight: true
         Layout.fillWidth: true
 
-        text: "Trick!"
+        text: {
+          if (verdictPanel.visible) {
+            "Next"
+          } else {
+            "Trick!"
+          }
+        }
         onClicked: {
-          game.submitItWasTrickQuestion()
+          if (verdictPanel.visible) {
+            // "Next"
+            game.advance()
+          } else {
+            // "Trick!"
+            game.submitItWasTrickQuestion()
+          }
         }
       }
     }
 
     Label {
+      id: gamePrompt
       Layout.fillWidth: true
       Layout.minimumHeight: 50
       Layout.maximumHeight: Layout.minimumHeight
 
       verticalAlignment: Text.AlignTop
+      padding: 15
       text: game.prompt
       wrapMode: Text.Wrap
       DebugRectangle {
@@ -93,19 +107,6 @@ Item {
       Layout.fillHeight: true
       visible: false
 
-      Connections {
-        target: game
-
-        function onEventVerdictRendered(correct) {
-          verdictPanel.visible = true
-          verdictPanel.userGaveCorrectAnswer = correct
-        }
-
-        function onEventNewQuestion() {
-          verdictPanel.visible = false
-        }
-      }
-
       DebugRectangle {
       }
     }
@@ -115,6 +116,23 @@ Item {
       Layout.fillWidth: true
       Layout.fillHeight: true
       visible: !verdictPanel.visible
+    }
+  }
+
+  Connections {
+    target: game
+
+    function onEventVerdictRendered(correct) {
+      verdictPanel.visible = true
+      verdictPanel.userGaveCorrectAnswer = correct
+      if (!correct) {
+        gamePrompt.text = game.prompt + " ... Oops! " + game.correctAnswer
+      }
+    }
+
+    function onEventNewQuestion() {
+      verdictPanel.visible = false
+      gamePrompt.text = game.prompt
     }
   }
 }
