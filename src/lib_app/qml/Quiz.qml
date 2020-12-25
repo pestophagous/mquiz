@@ -87,13 +87,16 @@ Item {
     Label {
       id: gamePrompt
       Layout.fillWidth: true
-      Layout.minimumHeight: 50
+      Layout.minimumHeight: 60
       Layout.maximumHeight: Layout.minimumHeight
 
       verticalAlignment: Text.AlignTop
       padding: 15
       text: game.prompt
-      wrapMode: Text.Wrap
+
+      font: Theme.solidIconStretchToMaxFitFont
+      fontSizeMode: Text.Fit
+
       DebugRectangle {
       }
     }
