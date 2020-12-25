@@ -11,16 +11,38 @@ Item {
   RowLayout {
     anchors.fill: parent
 
-    Label {
+    Item {
       Layout.fillHeight: true
 
       Layout.minimumWidth: 80
       Layout.maximumWidth: Layout.minimumWidth
+      Layout.rightMargin: 18
+      Layout.leftMargin: Layout.rightMargin
 
-      horizontalAlignment: Text.AlignHCenter
-      verticalAlignment: Text.AlignVCenter
-      text: "End"
-      DebugRectangle {
+      Label {
+        id: icon
+        anchors.top: parent.top
+        anchors.left: parent.left
+        anchors.right: parent.right
+        height: parent.height * 0.8
+        horizontalAlignment: Text.AlignHCenter
+        verticalAlignment: Text.AlignVCenter
+
+        text: Fonts.fa_solid_door_open // refer to Cheatsheet_Font_Awesome_Solid.pdf
+        font: Theme.solidIconStretchToMaxFitFont
+        fontSizeMode: Text.Fit
+      }
+      Label {
+        anchors.top: icon.bottom
+        anchors.left: parent.left
+        anchors.right: parent.right
+        height: parent.height * 0.2
+
+        horizontalAlignment: Text.AlignHCenter
+        verticalAlignment: Text.AlignVCenter
+        font: Theme.solidIconStretchToMaxFitFont
+        fontSizeMode: Text.Fit
+        text: "Exit"
       }
 
       MouseArea {
@@ -28,6 +50,8 @@ Item {
         onClicked: {
           navigation.endTheGame()
         }
+      }
+      DebugRectangle {
       }
     }
 
