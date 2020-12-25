@@ -10,10 +10,15 @@ Item {
 
   Label {
     anchors.fill: parent
+    padding: 30
     visible: !navigation.gameIsActive
     horizontalAlignment: Text.AlignHCenter
     verticalAlignment: Text.AlignVCenter
     text: "Jones Animal Quiz"
+
+    font: Theme.solidIconStretchToMaxFitFont
+    fontSizeMode: Text.Fit
+
     DebugRectangle {
     }
   }
