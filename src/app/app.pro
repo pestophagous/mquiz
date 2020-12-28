@@ -35,3 +35,5 @@ ios {
     # Q_ENABLE_BITCODE.value = NO
     # QMAKE_MAC_XCODE_SETTINGS += Q_ENABLE_BITCODE
 }
+
+TARGET = purrmaid

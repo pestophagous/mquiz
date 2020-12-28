@@ -22,6 +22,67 @@ ApplicationWindow {
     console.log(LogTags.guiTests, "ApplicationWindow onCompleted")
   }
 
+  function getRandom(min, max) {
+    return Math.random() * (max - min) + min
+  }
+
+  Flickable {
+    id: f
+    anchors.fill: parent
+
+    flickableDirection: Flickable.HorizontalFlick
+    clip: true
+
+    contentX: 800
+
+    contentHeight: 800
+    contentWidth: 1200
+
+    ImageSvgHelper {
+      height: 800
+      width: 1200
+      source: resourceHelper.imageSourcePrefix + 'images/background.png'
+
+      ImageSvgHelper {
+        id: purrmaid
+        x: getRandom(0, 1200)
+        y: getRandom(0, 800)
+        height: 49
+        width: 40
+        source: resourceHelper.imageSourcePrefix + 'images/c1.png'
+      }
+    }
+  }
+
+  Button {
+    anchors.top: parent.top
+    anchors.left: parent.left
+    text: "New"
+    onClicked: {
+      purrmaid.x = getRandom(0, 1200)
+      purrmaid.y = getRandom(0, 800)
+    }
+  }
+
+  Button {
+    anchors.bottom: parent.bottom
+    anchors.left: parent.left
+    text: "<"
+    onClicked: {
+      f.contentX = f.contentX - 400
+    }
+  }
+
+  Button {
+    anchors.bottom: parent.bottom
+    anchors.right: parent.right
+    text: ">"
+    onClicked: {
+      f.contentX = f.contentX + 400
+    }
+  }
+
+  /*
   ColumnLayout {
     anchors.fill: parent
     Item {
@@ -38,5 +99,5 @@ ApplicationWindow {
       Layout.fillWidth: true
       Layout.fillHeight: true
     }
-  }
+  }*/
 }

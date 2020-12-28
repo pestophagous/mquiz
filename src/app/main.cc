@@ -20,6 +20,7 @@ int main( int argc, char* argv[] )
     qSetMessagePattern( QString( "%{time yyyy-MM-dd hh:mm:ss} [QT-%{type}][v-" ) + project::GIT_HASH_WHEN_BUILT
                         + "][thr:%{threadid}]%{if-category}%{category}: %{endif}%{file}(%{line}): %{message}" );
 
+    Suppress_All_Assertions();
     // project::log used for DEMONSTRATION. Prefer Qt logging where available.
     project::log( "main.cc starting now %d", static_cast<int>( __LINE__ ) );
 

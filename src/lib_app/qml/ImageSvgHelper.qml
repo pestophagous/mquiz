@@ -5,7 +5,7 @@ Item {
   id: root
 
   // We cannot use 'alias', since these must be available to the Image AND the AnimatedImage
-  property var fillMode: nil
+  property var fillMode
   property url source: ""
 
   Image {
